@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Makovey/Scenes/Menu.unity
     guid: 261bca99f5d2d9b47bf84e5aff631344
+  - enabled: 1
+    path: Assets/Makovey/Scenes/Game Prototype.unity
+    guid: 4b266a3b671dd00438c9498895aaa595
   m_configObjects: {}
