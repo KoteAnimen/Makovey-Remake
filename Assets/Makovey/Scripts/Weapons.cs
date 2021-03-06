@@ -16,6 +16,7 @@ public class Weapon
 	public Animator animator;
 	public string walkState;
 	public string attackState;
+	[SerializeField]
 	public Vector3 startPosition; 
 	
 	public void Activate(bool active)
