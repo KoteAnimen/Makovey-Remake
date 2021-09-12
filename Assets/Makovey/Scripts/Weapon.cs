@@ -11,7 +11,8 @@ public class Weapon : MonoBehaviour
     public string walkState;
     public string attackState;
     public int countBullet;
-    public float damage;    
+    public float damage;
+    public float force;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,6 @@ public class Weapon : MonoBehaviour
     {
         GameObject cloneBullet;
         cloneBullet = Instantiate(bullet, transform.position, attackPoint.rotation);
-        cloneBullet.GetComponent<Rigidbody>().AddForce(attackPoint.forward * 3000.0f);
+        cloneBullet.GetComponent<Rigidbody>().AddForce(attackPoint.forward * force);
     }
 }

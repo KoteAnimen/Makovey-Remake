@@ -12,43 +12,49 @@ public class ChangeWeapon : MonoBehaviour
     {
         for(int i = 0; i < weapons.Length; i++)
         {
-            weapons[i].SetActive(false);
-            isGet[i] = false;
-            StartCoroutine(UpdateState());
-        }
-        
-    }    
-
-    IEnumerator UpdateState()
-    {
-        while (true)
+            if (isGet[i] != true)
+            {
+                weapons[i].SetActive(false);
+            }                  
+        }       
+    }
+    
+    void Update()
+    {        
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isGet[0] == true)
         {
-            yield return new WaitForSeconds(0.001f);
-
-            if (Input.GetKeyDown(KeyCode.Alpha1) && isGet[0] == true)
+            for (int i = 0; i < weapons.Length; i++)
             {
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    weapons[i].SetActive(false);
-                }
-                weapons[0].SetActive(true);
+                weapons[i].SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && isGet[1] == true)
+            weapons[0].SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isGet[1] == true)
+        {
+            for (int i = 0; i < weapons.Length; i++)
             {
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    weapons[i].SetActive(false);
-                }
-                weapons[1].SetActive(true);
+                weapons[i].SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && isGet[2] == true)
+            weapons[1].SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isGet[2] == true)
+        {
+            for (int i = 0; i < weapons.Length; i++)
             {
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    weapons[i].SetActive(false);
-                }
-                weapons[2].SetActive(true);
+                weapons[i].SetActive(false);
             }
+            weapons[2].SetActive(true);
         }
     }
+
+    public void GetWeapon(int id)
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].SetActive(false);
+        }
+        weapons[id].SetActive(true);
+        isGet[id] = true;
+    }
+    
 }
