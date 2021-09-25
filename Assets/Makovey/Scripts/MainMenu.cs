@@ -10,12 +10,19 @@ public class MainMenu : MonoBehaviour
 	public GameObject startButton;
 	public GameObject aboutUsButton;
 	public GameObject exitButton;
+	public Transform cursor;
 	
     // Start is called before the first frame update
     void Start()
     {
         aboutUsPanel = GameObject.Find("AboutUsPanel");
 		aboutUsPanel.SetActive(false);
+		Cursor.visible = false;
+    }
+
+	void Update()
+    {
+		cursor.position = Input.mousePosition;
     }
 	
 	public void StartGame()
