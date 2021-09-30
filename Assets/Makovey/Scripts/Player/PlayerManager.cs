@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
 
     public float hpPlayer;
+    public float maxHp;
     public float forcePlayer;    
     public bool isDead = false;
     public GameObject deadScreen;

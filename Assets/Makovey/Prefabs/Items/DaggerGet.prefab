@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &297076804541540847
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297076804966113798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0daf3fdb10e949b4985466d0fbfcaf48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &297076804789633278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297076804789633276}
+  - component: {fileID: 297076804789633279}
+  - component: {fileID: 297076804789633277}
+  m_Layer: 0
+  m_Name: DaggerGet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &297076804789633276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297076804789633278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -142.862, y: -112.084, z: 59.763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 297076804966179872}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &297076804789633279
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297076804789633278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0.18}
+--- !u!114 &297076804789633277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297076804789633278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9f9baced429db42be813d127156af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idWeapon: 2
+  getWeaponSound: {fileID: 8300000, guid: 0c933456c8c03cf40a6887fd54851e35, type: 3}
+--- !u!1001 &297076804966076996
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 297076804789633276}
+    m_Modifications:
+    - target: {fileID: 110658, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_Name
+      value: Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 110658, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.28586
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28586
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.28586
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+--- !u!1 &297076804966113798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 110658, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+  m_PrefabInstance: {fileID: 297076804966076996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &297076804966179872 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 439908, guid: a4cd3d5e9967248a69e6203d2ce67874, type: 3}
+  m_PrefabInstance: {fileID: 297076804966076996}
+  m_PrefabAsset: {fileID: 0}

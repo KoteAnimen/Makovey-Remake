@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour {
 
-	private controller cont;
-	
-	
-	
+	private controller cont;	
 	void Start () {
 		cont = GameObject.Find("Player").GetComponent<controller>();
 	}
@@ -25,7 +22,5 @@ public class Water : MonoBehaviour {
 		}
 		
 	}
-	
-	
 	
 }
