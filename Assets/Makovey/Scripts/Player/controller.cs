@@ -13,6 +13,7 @@ public class controller : MonoBehaviour {
 	public string camera;
 	public float jumpSpeed;
 	public float jumpSpeedinWater;
+	public AudioClip[] jumpSounds; 
 	public bool inWater;
 	public AudioClip[] waterSounds;
 	public Color underWaterColor;
@@ -44,7 +45,9 @@ public class controller : MonoBehaviour {
 			
 			if (Input.GetButtonDown ("Jump"))
 			{
-				moveDirection.y = jumpSpeed;				
+				int rnd = Random.Range(0, jumpSounds.Length);
+				moveDirection.y = jumpSpeed;
+				playerSource.PlayOneShot(jumpSounds[rnd]);
 			}			
 			
 		}
