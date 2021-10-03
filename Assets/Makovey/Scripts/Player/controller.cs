@@ -15,15 +15,19 @@ public class controller : MonoBehaviour {
 	public float jumpSpeedinWater;
 	public bool inWater;
 	public AudioClip[] waterSounds;
+	public Color underWaterColor;
+	public float underWaterFog = 0.11f;
 	public float timePlay;
 	private AudioSource playerSource;
 	private bool play = false;
+	private AudioReverbZone underWaterEffect;
 	
 
 	void Start()
 	{
 		cam = GameObject.Find(camera).GetComponent<MouseL> ();
 		playerSource = GetComponent<AudioSource>();
+		underWaterEffect = GetComponent<AudioReverbZone>();
 		StartCoroutine(WaterMoveSounds());
 	}
 	
@@ -51,15 +55,20 @@ public class controller : MonoBehaviour {
 		
 		if(inWater == true)
 		{
-			RenderSettings.fogDensity = 0.11f;
-			RenderSettings.fogColor = Color.blue;
+			RenderSettings.fogDensity = underWaterFog;
+			RenderSettings.fogColor = underWaterColor;
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
-			moveDirection.y = -gravity * Time.deltaTime * 10;			
+			moveDirection.y = -gravity * Time.deltaTime * 10;
+			underWaterEffect.enabled = true;
 
 			if (Input.GetButton ("Jump")) 
 			{
 				moveDirection.y = jumpSpeedinWater;				
+			}
+            if (Input.GetKey(KeyCode.C))
+            {
+				moveDirection.y = -jumpSpeedinWater;
 			}
 
 			if (controller.velocity.magnitude >= 1f) play = true;
@@ -69,6 +78,7 @@ public class controller : MonoBehaviour {
         {
 			RenderSettings.fogDensity = 0.02f;
 			RenderSettings.fogColor = Color.black;
+			underWaterEffect.enabled = false;
 			play = false;
         }
 
