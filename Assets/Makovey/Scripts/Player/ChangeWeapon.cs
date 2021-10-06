@@ -8,6 +8,7 @@ public class ChangeWeapon : MonoBehaviour
     public AudioClip[] changeWeaponSounds;
     public bool[] isGet;
     private AudioSource playerAudio;
+    private int idNumber = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,40 +25,33 @@ public class ChangeWeapon : MonoBehaviour
     
     void Update()
     {        
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isGet[0] == true)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (weapons[0].activeSelf == false)
-            {
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    weapons[i].SetActive(false);
-                }
-                weapons[0].SetActive(true);
-                playerAudio.PlayOneShot(changeWeaponSounds[0]);
-            }
+            idNumber = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && isGet[1] == true)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if(weapons[1].activeSelf == false)
-            {
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    weapons[i].SetActive(false);
-                }
-                weapons[1].SetActive(true);
-                playerAudio.PlayOneShot(changeWeaponSounds[1]);
-            }            
+            idNumber = 1;                 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && isGet[2] == true)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (weapons[2].activeSelf == false)
+            idNumber = 2;
+        }
+        ChangeWeaponFunc(idNumber);
+    }
+
+    void ChangeWeaponFunc(int id)
+    {
+        if (isGet[id] == true)
+        {
+            if (weapons[id].activeSelf == false)
             {
                 for (int i = 0; i < weapons.Length; i++)
                 {
                     weapons[i].SetActive(false);
                 }
-                weapons[2].SetActive(true);
-                playerAudio.PlayOneShot(changeWeaponSounds[2]);
+                weapons[id].SetActive(true);
+                playerAudio.PlayOneShot(changeWeaponSounds[id]);
             }
         }
     }
@@ -70,6 +64,6 @@ public class ChangeWeapon : MonoBehaviour
         }
         weapons[id].SetActive(true);
         isGet[id] = true;
-    }
-    
+        idNumber = id;
+    }    
 }

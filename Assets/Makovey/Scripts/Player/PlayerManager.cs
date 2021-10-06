@@ -13,7 +13,8 @@ public class PlayerManager : MonoBehaviour
     public bool isDead = false;
     public GameObject deadScreen;
     public AudioClip deadClip;
-    public AudioClip[] underwaterDamage;
+    public AudioClip[] underwaterDamageSounds;
+    public AudioClip[] damageSounds;
     private TMP_Text hpBar;    
     private AudioSource playerAudio;
     private GameObject music;
@@ -57,7 +58,6 @@ public class PlayerManager : MonoBehaviour
             music.SetActive(false);            
         }
     }
-
     public void Respawn()
     {
         Application.LoadLevel(Application.loadedLevelName);
@@ -66,6 +66,22 @@ public class PlayerManager : MonoBehaviour
     public void MainMenuLoad()
     {
         Application.LoadLevel("Menu");
+    }
+
+    public void GetDamage(float damage)
+    {
+        if (!player.inWater)
+        {
+            hpPlayer -= damage;
+            int rnd1 = Random.Range(0, damageSounds.Length);
+            playerAudio.PlayOneShot(damageSounds[rnd1]);
+        }
+        else
+        {
+            hpPlayer -= damage;
+            int rnd2 = Random.Range(0, underwaterDamageSounds.Length);
+            playerAudio.PlayOneShot(underwaterDamageSounds[rnd2]);
+        }
     }
 
     IEnumerator Oxygen()
@@ -78,9 +94,7 @@ public class PlayerManager : MonoBehaviour
                 oxygen -= 5;
                 if (oxygen <= 0 && !isDead)
                 {
-                    hpPlayer -= 10;
-                    int rnd = Random.Range(0, underwaterDamage.Length);
-                    playerAudio.PlayOneShot(underwaterDamage[rnd]);
+                    GetDamage(10);
                 }
             }
             else
@@ -90,7 +104,6 @@ public class PlayerManager : MonoBehaviour
             
         }
     }
-
     IEnumerator BarsUpdate()
     {        
         while (true)

@@ -13,7 +13,8 @@ public class MouseL : MonoBehaviour {
 	Vector2 Limit = new Vector2 (-70, 80);
 	private Vector2 vel;	
 	
-	void Update () {
+	void Update () 
+	{
 		NewCoord.x = Mathf.Clamp (NewCoord.x, Limit.x, Limit.y);
 		NewCoord.x -= Input.GetAxis ("Mouse Y") * sens.x / 100;
 		NewCoord.y += Input.GetAxis ("Mouse X") * sens.x / 100;

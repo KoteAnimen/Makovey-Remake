@@ -9,36 +9,45 @@ public class EnemyManager : MonoBehaviour
     public float damageArrow;
     public float damageSlash;
     public bool isDead;
+    public float timeToDestroy;
     public AudioClip deadSound;
     private GameObject deadBody;
     private GameObject model;
     private AudioSource source;
+    private Light explLight;
+    private PumpkinAi ai;
     
-    void Start()
+    void Awake()
     {
         deadBody = transform.Find("deadBody").gameObject;
+        explLight = transform.Find("deadBody").gameObject.GetComponent<Light>();
         model = transform.Find("model").gameObject;
         source = GetComponent<AudioSource>();
+        ai = GetComponent<PumpkinAi>();
         deadBody.SetActive(false);
+        StartCoroutine(DeleteAfterDead());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Rock")
         {
-            hpEnemy -= damageRock;
-            DeadFunction();            
+            Damage(damageRock);                     
         }
         if (collision.gameObject.tag == "Arrow")
         {
-            hpEnemy -= damageArrow;
-            DeadFunction();
+            Damage(damageArrow);            
         }
         if (collision.gameObject.tag == "Slash")
         {
-            hpEnemy -= damageSlash;
-            DeadFunction();
+            Damage(damageSlash);           
         }
+    }
+
+    public void Damage(float damage)
+    {
+        hpEnemy -= damage;
+        DeadFunction();
     }
 
     void DeadFunction()
@@ -48,9 +57,27 @@ public class EnemyManager : MonoBehaviour
             model.SetActive(false);
             deadBody.SetActive(true);
             gameObject.GetComponent<SphereCollider>().enabled = false;
+            ai.enabled = false;
             isDead = true;
             source.PlayOneShot(deadSound);
         }        
+    }
+
+    IEnumerator DeleteAfterDead()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if(deadBody.activeSelf == true)
+            {                
+                explLight.intensity -= 2f;
+            }
+            if (isDead)
+            {
+                yield return new WaitForSeconds(timeToDestroy);
+                deadBody.SetActive(false);
+            }            
+        }
     }
 
 
