@@ -6,15 +6,18 @@ using UnityEngine.AI;
 public class PumpkinAi : MonoBehaviour
 {
     public float agrDistance;
+    public float fireDistance;
+    public GameObject fire;
     private float currentTargetDistance = 100;
     private NavMeshAgent agent;
-    private GameObject target;
+    private GameObject target;       
     private EnemyManager em;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         em = GetComponent<EnemyManager>();
-        target = GameObject.Find("Player");
+        target = GameObject.Find("Player");              
+        fire.SetActive(false);
         StartCoroutine(CalculateTargetDistance());
     }
     
@@ -26,8 +29,12 @@ public class PumpkinAi : MonoBehaviour
         }
         if(currentTargetDistance < 2f)
         {
-            em.Damage(20);
+            em.Damage(20);            
         }
+        if(currentTargetDistance <= fireDistance)
+        {
+            fire.SetActive(true);
+        }           
     }
 
     IEnumerator CalculateTargetDistance()

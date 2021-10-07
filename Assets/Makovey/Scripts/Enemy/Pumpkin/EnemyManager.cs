@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     public float timeToDestroy;
     public AudioClip deadSound;
     private GameObject deadBody;
-    private GameObject model;
+    private GameObject model;    
     private AudioSource source;
     private Light explLight;
     private PumpkinAi ai;
@@ -21,10 +21,10 @@ public class EnemyManager : MonoBehaviour
     {
         deadBody = transform.Find("deadBody").gameObject;
         explLight = transform.Find("deadBody").gameObject.GetComponent<Light>();
-        model = transform.Find("model").gameObject;
+        model = transform.Find("model").gameObject;        
         source = GetComponent<AudioSource>();
         ai = GetComponent<PumpkinAi>();
-        deadBody.SetActive(false);
+        deadBody.SetActive(false);        
         StartCoroutine(DeleteAfterDead());
     }
 
