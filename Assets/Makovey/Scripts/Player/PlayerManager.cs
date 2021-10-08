@@ -72,15 +72,21 @@ public class PlayerManager : MonoBehaviour
     {
         if (!player.inWater)
         {
-            hpPlayer -= damage;
-            int rnd1 = Random.Range(0, damageSounds.Length);
-            playerAudio.PlayOneShot(damageSounds[rnd1]);
+            if(hpPlayer > 0)
+            {
+                hpPlayer -= damage;
+                int rnd1 = Random.Range(0, damageSounds.Length);
+                playerAudio.PlayOneShot(damageSounds[rnd1]);
+            }            
         }
         else
         {
-            hpPlayer -= damage;
-            int rnd2 = Random.Range(0, underwaterDamageSounds.Length);
-            playerAudio.PlayOneShot(underwaterDamageSounds[rnd2]);
+            if(hpPlayer > 0)
+            {
+                hpPlayer -= damage;
+                int rnd2 = Random.Range(0, underwaterDamageSounds.Length);
+                playerAudio.PlayOneShot(underwaterDamageSounds[rnd2]);
+            }            
         }
     }
 
@@ -100,8 +106,7 @@ public class PlayerManager : MonoBehaviour
             else
             {
                 oxygen = 100;
-            }
-            
+            }            
         }
     }
     IEnumerator BarsUpdate()
