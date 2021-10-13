@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public float damageRock;
     public float damageArrow;
     public float damageSlash;
-    public bool isDead;
+    public bool isDead = false;
     public float timeToDestroy;
     public AudioClip deadSound;
     private GameObject deadBody;

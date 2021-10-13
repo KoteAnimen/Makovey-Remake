@@ -3825,7 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f8514eec205044595dc1f572f2d6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfGameScene: Game Prototype
+  nameOfGameScene: ClassicGame
   nameGame: {fileID: 1117313714}
   startButton: {fileID: 241746636}
   aboutUsButton: {fileID: 1689849654}
