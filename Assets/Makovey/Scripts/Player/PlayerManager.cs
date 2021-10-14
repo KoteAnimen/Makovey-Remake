@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     public float forcePlayer;
     public float oxygen = 100;
     public bool isDead = false;
-    public GameObject deadScreen;
+    private GameObject deadScreen;
     public AudioClip deadClip;
     public AudioClip[] underwaterDamageSounds;
     public AudioClip[] damageSounds;
@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        deadScreen = GameObject.Find("DeadScreen");
         deadScreen.SetActive(false);
         hpBar = GameObject.Find("HPPlayerBar").GetComponent<TMP_Text>();        
         playerAudio = GetComponent<AudioSource>();
