@@ -99,7 +99,6 @@ MonoBehaviour:
   countBullet: 0
   damage: 0
   force: 3000
-  timeToAttack: 1
   attackSound: {fileID: 8300000, guid: d6960ea0ebdf02445a4d816bfd849e28, type: 3}
 --- !u!95 &1779914667
 Animator:
@@ -120,7 +119,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1779914668
+--- !u!114 &1236193154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8220593609000664535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ec42f7bf52fd443806c42812ef84d1, type: 3}
+  m_Script: {fileID: 11500000, guid: e6a64b78a726d5949a3bf42f0b19fbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 487007384077805643, guid: 60fa97c4c51aedf4ab79445d444f77c0, type: 3}
@@ -140,8 +139,8 @@ MonoBehaviour:
   countBullet: 0
   damage: 0
   force: 2500
-  timeToAttack: 2
   attackSound: {fileID: 8300000, guid: f27291a9a58749f459b4b4253bd911ac, type: 3}
+  mayAttack: 1
 --- !u!95 &1329305713
 Animator:
   serializedVersion: 3
@@ -181,7 +180,6 @@ MonoBehaviour:
   countBullet: 0
   damage: 0
   force: 1000
-  timeToAttack: 2
   attackSound: {fileID: 8300000, guid: 51d03627c59ca4a4e90e7167ad0ca86a, type: 3}
 --- !u!1 &8220593610282281028
 GameObject:
@@ -672,7 +670,6 @@ MonoBehaviour:
   forcePlayer: 0
   oxygen: 100
   isDead: 0
-  deadScreen: {fileID: 0}
   deadClip: {fileID: 8300000, guid: 041bf6ad8f6115c428f9b8a35779b79a, type: 3}
   underwaterDamageSounds:
   - {fileID: 8300000, guid: 7df70f8eb19677d4eb8b9b70d1cbb353, type: 3}

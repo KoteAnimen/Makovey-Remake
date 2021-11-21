@@ -8,6 +8,8 @@ TagManager:
   - Rock
   - Arrow
   - Slash
+  - Message
+  - zombieEnemy
   layers:
   - Default
   - TransparentFX

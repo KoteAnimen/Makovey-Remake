@@ -13,8 +13,7 @@ public class Weapon : MonoBehaviour
     public string attackState;
     public int countBullet;
     public float damage;
-    public float force;
-    public float timeToAttack;
+    public float force;    
     public AudioClip attackSound;
     
 

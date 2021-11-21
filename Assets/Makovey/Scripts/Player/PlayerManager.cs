@@ -20,7 +20,8 @@ public class PlayerManager : MonoBehaviour
     private GameObject music;
     private GameObject cursor;
     private controller player;
-    private MouseL camera;    
+    private MouseL camera;
+    private GameObject messageObject;
 
     private void Awake()
     {
@@ -36,8 +37,10 @@ public class PlayerManager : MonoBehaviour
         music = GameObject.Find("Weapons");
         player = GetComponent<controller>();
         camera = transform.Find("Camera").GetComponent<MouseL>();
+        messageObject = GameObject.Find("Message");
         StartCoroutine(BarsUpdate());
         StartCoroutine(Oxygen());
+        messageObject.SetActive(false);
     }
     
     void Update()
@@ -62,6 +65,22 @@ public class PlayerManager : MonoBehaviour
     public void Respawn()
     {
         Application.LoadLevel(Application.loadedLevelName);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Collider>().tag == "Message")
+        {
+            messageObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "Message")
+        {
+            messageObject.SetActive(false);
+        }
     }
 
     public void MainMenuLoad()

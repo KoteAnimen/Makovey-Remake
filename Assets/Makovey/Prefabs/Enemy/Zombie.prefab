@@ -920,9 +920,10 @@ GameObject:
   - component: {fileID: 7101472627285990071}
   - component: {fileID: 7101472627285990070}
   - component: {fileID: 7101472627285990057}
+  - component: {fileID: 1839757748920023292}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: zombieEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -934,7 +935,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7100848526751209635}
-  m_LocalRotation: {x: -0, y: 0.7481922, z: -0, w: 0.663482}
+  m_LocalRotation: {x: 0, y: 0.74819183, z: 0, w: 0.6634824}
   m_LocalPosition: {x: -159.05019, y: -112.942, z: 63.75931}
   m_LocalScale: {x: 2.5288925, y: 2.5288925, z: 2.5288925}
   m_Children:
@@ -972,7 +973,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15
+  m_Radius: 0.09
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -988,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360d839b8c7f0bb48861327a162b57e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agrDistance: 15
+  agrDistance: 100
   attackDistance: 2
 --- !u!195 &7101472627285990070
 NavMeshAgent:
@@ -1026,9 +1027,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   damageRock: 0
-  damageArrow: 10
+  damageArrow: 0
   damageSlash: 30
   isDead: 0
+--- !u!114 &1839757748920023292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100848526751209635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c00613abb690e4bba37e775e006be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7100851115313467599
 GameObject:
   m_ObjectHideFlags: 0

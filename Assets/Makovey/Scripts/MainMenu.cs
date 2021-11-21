@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
 	GameObject aboutUsPanel;
+	GameObject aboutGamePanel;
 	public string nameOfGameScene;
 	public GameObject nameGame;
 	public GameObject startButton;
@@ -16,7 +17,9 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         aboutUsPanel = GameObject.Find("AboutUsPanel");
+		aboutGamePanel = GameObject.Find("AboutGame");
 		aboutUsPanel.SetActive(false);
+		aboutGamePanel.SetActive(false);
 		Cursor.visible = false;
     }
 
@@ -38,6 +41,15 @@ public class MainMenu : MonoBehaviour
 		exitButton.SetActive(chose);
 		aboutUsPanel.SetActive(!chose);
 		
+	}
+	public void AboutGame(bool chose)
+	{
+		chose = !chose;
+		nameGame.SetActive(chose);
+		startButton.SetActive(chose);		
+		exitButton.SetActive(chose);
+		aboutGamePanel.SetActive(!chose);
+		aboutUsButton.SetActive(chose);
 	}
 	public void ExitGame()
 	{

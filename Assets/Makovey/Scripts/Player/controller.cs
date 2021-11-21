@@ -79,7 +79,7 @@ public class controller : MonoBehaviour {
 		}
         else
         {
-			RenderSettings.fogDensity = 0.02f;
+			RenderSettings.fogDensity = 0.005f;
 			RenderSettings.fogColor = Color.black;
 			underWaterEffect.enabled = false;
 			play = false;
