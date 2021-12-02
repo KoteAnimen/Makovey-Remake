@@ -10,11 +10,13 @@ public class ZombieManager : MonoBehaviour
     public float damageArrow;
     public float damageSlash;
     public bool isDead = false;
+    public AudioClip deadSound;
     private Animator animation;
     private ZombieAi ai;
     private CapsuleCollider collider;
     private GameObject body;
     private NavMeshAgent agent;
+    private AudioSource sourceSound;
     void Start()
     {
         animation = GetComponent<Animator>();
@@ -23,6 +25,7 @@ public class ZombieManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         body = transform.Find("basic_rig").gameObject;
         body.SetActive(false);
+        sourceSound = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,6 +52,7 @@ public class ZombieManager : MonoBehaviour
     {
         if (hp <= 0)
         {
+            sourceSound.PlayOneShot(deadSound);
             animation.enabled = false;
             collider.enabled = false;
             ai.enabled = false;
