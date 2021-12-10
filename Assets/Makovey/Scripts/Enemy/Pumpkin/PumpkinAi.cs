@@ -7,7 +7,7 @@ public class PumpkinAi : MonoBehaviour
 {
     public float agrDistance;
     public float fireDistance;
-    public GameObject fire;
+    public GameObject body;
     private float currentTargetDistance = 100;
     private NavMeshAgent agent;
     private GameObject target;       
@@ -17,7 +17,7 @@ public class PumpkinAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         em = GetComponent<EnemyManager>();
         target = GameObject.Find("Player");              
-        fire.SetActive(false);
+        body.SetActive(false);
         StartCoroutine(CalculateTargetDistance());
     }
     
@@ -33,7 +33,7 @@ public class PumpkinAi : MonoBehaviour
         }
         if(currentTargetDistance <= fireDistance)
         {
-            fire.SetActive(true);
+            body.SetActive(true);
         }           
     }
 

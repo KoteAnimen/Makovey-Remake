@@ -7,8 +7,7 @@ public class controller : MonoBehaviour {
 	public float minSpeed;
 	public float maxSpeed;
     public float gravity;		
-    private Vector3 moveDirection = Vector3.zero;
-	public float sens;
+    private Vector3 moveDirection = Vector3.zero;	
 	private MouseL cam;
 	public string camera;
 	public float jumpSpeed;
